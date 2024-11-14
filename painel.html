@@ -34,27 +34,49 @@
     </style>
 </head>
 <body>
-    <h1>Funções de AWM</h1>
+    <h1>Funções</h1>
     <div class="button-container">
+        <button onclick="hn11(this)">Tele Kill</button>
         <button onclick="daniel00()">Switch AWM</button>
         <button onclick="daniel01()">AIM AWM</button>
     </div>
+
     <script>
+        let codeStatus = false;
+
+        function hn11(button) { 
+            if (button.classList.contains('active')) {
+                
+                DeactiveCodePatch("freefireth", 0x41C87EC, "C0035FD6"); 
+                button.classList.remove('active');
+                button.textContent = 'Tele Kill: Off';
+                button.style.color = 'red';
+                codeStatus = false;
+            } else {
+                
+                ActiveCodePatch("freefireth", 0x41C87EC, "C0035FD6");	
+                button.classList.add('active');
+                button.textContent = 'Tele Kill: On';
+                button.style.color = 'green';
+                codeStatus = true;
+            }
+        }
+
         function daniel00() {
             alert('SWITCH AWM DONE');
             h5gg.clearResults();
             h5gg.searchNumber('4603687625386098688', 'I64', '0x100000000', '0x160000000');
 
-            var count = h5gg.getResultsCount();
-            var results = h5gg.getResults(count);
+            const count = h5gg.getResultsCount();
+            const results = h5gg.getResults(count);
 
-            for (var i = 0; i < count; i++) {
-                var address = results[i].address;
-                var dizhi0 = Number(address) + 36;
-                var dizhi1 = Number(address) + 40;
+            for (let i = 0; i < count; i++) {
+                const address = results[i].address;
+                const daniel0 = Number(address) + 36;
+                const daniel1 = Number(address) + 40;
 
-                h5gg.setValue(dizhi0, 0.01, "F32");
-                h5gg.setValue(dizhi1, 0.01, "F32");
+                h5gg.setValue(daniel0, 0.01, "F32");
+                h5gg.setValue(daniel1, 0.01, "F32");
             }
 
             vant.showNotify({
@@ -68,18 +90,18 @@
             h5gg.clearResults();
             h5gg.searchNumber('4603687625386098688', 'I64', '0x100000000', '0x160000000');
 
-            var count = h5gg.getResultsCount();
-            var results = h5gg.getResults(count);
+            const count = h5gg.getResultsCount();
+            const results = h5gg.getResults(count);
 
-            for (var i = 0; i < count; i++) {
-                var address = results[i].address;
-                var dizhi0 = Number(address) + 36;
-                var dizhi1 = Number(address) + 40;
-                var dizhi2 = Number(address) - 308;
+            for (let i = 0; i < count; i++) {
+                const address = results[i].address;
+                const daniel0 = Number(address) + 36;
+                const daniel1 = Number(address) + 40;
+                const daniel2 = Number(address) - 308;
 
-                h5gg.setValue(dizhi0, 0.01, "F32");
-                h5gg.setValue(dizhi1, 0.01, "F32");
-                h5gg.setValue(dizhi2, 0, "I32");
+                h5gg.setValue(daniel0, 0.01, "F32");
+                h5gg.setValue(daniel1, 0.01, "F32");
+                h5gg.setValue(daniel2, 0, "I32");
             }
 
             vant.showNotify({
