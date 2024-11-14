@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheats Ativação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        button {
+            background-color: #333;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button.active {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Funções de AWM</h1>
+    <div class="button-container">
+        <button onclick="daniel00()">Switch AWM</button>
+        <button onclick="daniel01()">AIM AWM</button>
+    </div>
+    <script>
+        function daniel00() {
+            alert('SWITCH AWM DONE');
+            h5gg.clearResults();
+            h5gg.searchNumber('4603687625386098688', 'I64', '0x100000000', '0x160000000');
+
+            var count = h5gg.getResultsCount();
+            var results = h5gg.getResults(count);
+
+            for (var i = 0; i < count; i++) {
+                var address = results[i].address;
+                var dizhi0 = Number(address) + 36;
+                var dizhi1 = Number(address) + 40;
+
+                h5gg.setValue(dizhi0, 0.01, "F32");
+                h5gg.setValue(dizhi1, 0.01, "F32");
+            }
+
+            vant.showNotify({
+                type: 'success',
+                message: 'ok'
+            });
+        }
+
+        function daniel01() {
+            alert('AIM AWM DONE');
+            h5gg.clearResults();
+            h5gg.searchNumber('4603687625386098688', 'I64', '0x100000000', '0x160000000');
+
+            var count = h5gg.getResultsCount();
+            var results = h5gg.getResults(count);
+
+            for (var i = 0; i < count; i++) {
+                var address = results[i].address;
+                var dizhi0 = Number(address) + 36;
+                var dizhi1 = Number(address) + 40;
+                var dizhi2 = Number(address) - 308;
+
+                h5gg.setValue(dizhi0, 0.01, "F32");
+                h5gg.setValue(dizhi1, 0.01, "F32");
+                h5gg.setValue(dizhi2, 0, "I32");
+            }
+
+            vant.showNotify({
+                type: 'success',
+                message: 'ok'
+            });
+        }
+    </script>
+</body>
+</html>
